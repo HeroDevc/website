@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omgni</title>
+
+    <style>
+        body {
+            background-color: rgb(48, 48, 47);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(48, 48, 47);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(67, 67, 67);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(83, 83, 83);
+        }
+        ::-webkit-scrollbar-corner {
+            background: rgb(48, 48, 47)
+        }
+
+        .cmd-text-h1-div {
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+        }
+
+        .cmd-text-h1 {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            padding-top: 10px;
+            margin: 0;
+            position: fixed;
+            display: flex;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .cmd-text-h2 {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            padding-top: 50px;
+            text-align: center;
+            position: fixed;
+            display: flex;
+            font-weight: lighter;
+        }
+
+        .cmd-card-div {
+            background-color: rgb(57, 57, 57);
+            position: fixed;
+            width: auto;
+            height: 89%;
+            top: 9%;
+            left: 2%;
+            right: 2%;
+            border-radius: 12px;
+            display: flex;
+            justify-items: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            overflow-y: auto;
+        }
+
+        .command-div-content {
+            background-color: rgb(87, 87, 87);
+            width: 97%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            border-radius: 10px;
+            flex-direction: column;
+        }
+
+        .command-div-content h2 {
+            color: rgb(255, 255, 255);
+            font-weight: lighter;
+            margin: 0;
+            padding: 0;
+            padding-left: 5px;
+            display: flex;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .command-div-content p {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-bottom: 5px;
+            position: relative;
+            display: flex;
+            font-size: 20px;
+        }
+
+        .command-div-content div {
+            background-color: rgb(77, 76, 76);
+            width: auto;
+            height: auto;
+            padding: 4px;
+            margin: 0;
+            display: flex;
+            position: relative;
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="cmd-text-h1-div">
+    <h1 class="cmd-text-h1">omgni bot commands</h1>
+    <h2 class="cmd-text-h2">Default prefix for all commands is !</h2>
+</div>
+<div class="cmd-card-div">
+    <div class="command-div-content">
+        <h2>players</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many players the bot has seen.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!players</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>radius</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows all players that are in bot's render distance.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!radius</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>top</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get top 5 players of these categories.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!top nword/kills/deaths/playtime/pt/messages/joins/leaves/pp (hard/soft)</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>time</h2>
+        <p>Description:</p>
+        <div>
+            <p>Returns time in ticks and tells you if you can sleep.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!time</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>sleep</h2>
+        <p>Description:</p>
+        <div>
+            <p>Tells you if you can sleep.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!sleep</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>leaves</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many times a player has left.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!leaves [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>messages</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many message a player has sent.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>msgs.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!messages [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>curse</h2>
+        <p>Description:</p>
+        <div>
+            <p>Curse a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!curse [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>ban</h2>
+        <p>Description:</p>
+        <div>
+            <p>Ban a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!ban [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>kick</h2>
+        <p>Description:</p>
+        <div>
+            <p>Kick a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!kick [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>mute</h2>
+        <p>Description:</p>
+        <div>
+            <p>Mute a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!mute [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>firstwords</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player's first said words.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>firstmessage.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!firstwords [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>lastwords</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player's last said words.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>lastmessage.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!lastwords [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>seen</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows the last time when player was seen playing.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>lastseen.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!seen [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>joindate</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows when player was first seen.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>jd, firstseen.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!joindate [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>ping</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player's ping.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!ping [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>kills</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many kills player has.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!kills [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>kill</h2>
+        <p>Description:</p>
+        <div>
+            <p>Kill the bot.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!kill</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>coords</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get bot's coordinates.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!coords</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>report</h2>
+        <p>Description:</p>
+        <div>
+            <p>Report a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!report [player] [reason]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>rules</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows server's rules.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!rules</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>no</h2>
+        <p>Description:</p>
+        <div>
+            <p>No.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!no</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>yes</h2>
+        <p>Description:</p>
+        <div>
+            <p>Yes.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!yes</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>dupe</h2>
+        <p>Description:</p>
+        <div>
+            <p>Dupe an item.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!dupe [item]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>locate</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player coordinates. (100% WORKING!)</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!locate [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>tps</h2>
+        <p>Description:</p>
+        <div>
+            <p>get server tps. (VERY INACCURATE look at the tab instead!)</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!tps</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>bestping</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows a player with the best ping.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>bp.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!bestping</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>worstping</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows a player with the worst ping.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>wp.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!worstping</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>playtime</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how much time a player has spent playing.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>pt.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!playtime [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>offlinemsg</h2>
+        <p>Description:</p>
+        <div>
+            <p>Send an offline message to a player.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>om, offlinemessage, omsg.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!offlinemsg [player] [message]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>dox</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player's ip address. (FAKE!)</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!dox [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>nword</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many times a player has said the n word.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!nword [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>deaths</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many times a player has died.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!deaths [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>kd</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows player's kd.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!kd [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>quote</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get a random quote from a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!quote [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>health</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows bot's health.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!health</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>food</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows bot's food.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!food</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>savemsg</h2>
+        <p>Description:</p>
+        <div>
+            <p>Save a message.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!savemsg [message]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>playmsg</h2>
+        <p>Description:</p>
+        <div>
+            <p>Play player's saved message.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!playmsg [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>iam</h2>
+        <p>Description:</p>
+        <div>
+            <p>Introduce yourself to the bot.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!iam [message]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>whois</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get player's introduction.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!whois [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>leak</h2>
+        <p>Description:</p>
+        <div>
+            <p>Leak stuff.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!leak [something]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>gamemode</h2>
+        <p>Description:</p>
+        <div>
+            <p>Set your game mode.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>gm.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!gamemode [gamemode]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>askgod</h2>
+        <p>Description:</p>
+        <div>
+            <p>8ball.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!askgod [question]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>give</h2>
+        <p>Description:</p>
+        <div>
+            <p>Give an item to a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!give [player] [item]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>teleport</h2>
+        <p>Description:</p>
+        <div>
+            <p>Teleport to a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!teleport [player/location]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>op</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get operator status.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!op</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>bless</h2>
+        <p>Description:</p>
+        <div>
+            <p>Bless a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!bless [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>kit</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get a kit.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!kit [name]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>math</h2>
+        <p>Description:</p>
+        <div>
+            <p>Solves math.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!math [problem]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>pp</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get your pp size.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>penis.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!pp</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>uptime</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get bot's uptime.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!uptime</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>urban</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get urban definition.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>ud.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!urban [query]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>totem</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot equip totem.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!totem</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>gap</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot eat golden apple.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!gap</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>armor</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot equip armor. (Diamond 1.12.2 or Netherite 1.16.5+)</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!armor</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>online</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many players are online.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!online</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>y/n</h2>
+        <p>Description:</p>
+        <div>
+            <p>Yes/No.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!y/n</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>dice</h2>
+        <p>Description:</p>
+        <div>
+            <p>Roll a six side dice.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!dice</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>infect</h2>
+        <p>Description:</p>
+        <div>
+            <p>Infect a player with autism.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!infect [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>execute</h2>
+        <p>Description:</p>
+        <div>
+            <p>Vote for an execution of a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!execute [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>vote</h2>
+        <p>Description:</p>
+        <div>
+            <p>Vote yes/no for player's execution.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!vote [yes/no]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>jew</h2>
+        <p>Description:</p>
+        <div>
+            <p>Find a jew.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!jew [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>cooltext</h2>
+        <p>Description:</p>
+        <div>
+            <p>Makes your text look cooler.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!cooltext [text]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>motd</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get random 2b2t motd.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!motd</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>summon</h2>
+        <p>Description:</p>
+        <div>
+            <p>Summon something.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!summon [something]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>joinmessage</h2>
+        <p>Description:</p>
+        <div>
+            <p>Set a custom join message for a player.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>jm.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!joinmessage [player] [message]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>joinmessage</h2>
+        <p>Description:</p>
+        <div>
+            <p>Remove join messages for a player.</p>
+        </div>
+        <p>Aliases:</p>
+        <div>
+            <p>jm.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!joinmessage remove [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>come</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot come to you.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!come</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>follow</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot follow you.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!follow</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>stop</h2>
+        <p>Description:</p>
+        <div>
+            <p>Make bot stop following you.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!stop</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>addfaq</h2>
+        <p>Description:</p>
+        <div>
+            <p>Add a faq.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!addfaq [text]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>faq</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get a random faq or get a specific one.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!faq [number]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>clout</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how many times a word has been said.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!clout [word]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>discord</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get invite link to omgni discord.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!discord</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>mail</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get your mail.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!mail</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>sendmail</h2>
+        <p>Description:</p>
+        <div>
+            <p>Send mail to a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!sendmail [player] [message]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>clearmail</h2>
+        <p>Description:</p>
+        <div>
+            <p>Clear your mail box.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!clearmail</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>delmail</h2>
+        <p>Description:</p>
+        <div>
+            <p>Delete the last sent mail to a player.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!delmail [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>bottom</h2>
+        <p>Description:</p>
+        <div>
+            <p>Get bottom 5 players of these categories.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!bottom nword(s)/kills/deaths/playtime/pt/messages/joins/leaves/pp (hard/soft)</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>tpaccept</h2>
+        <p>Description:</p>
+        <div>
+            <p>Accepts your tpa request.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!tpaccept</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>lastkill</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows the last time player got a kill.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!lastkill [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>firstkill</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows the first time player got a kill.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!firstkill [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>firstdeath</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows the first time player died.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!firstdeath [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>lastdeath</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows the last time player died.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!lastdeath [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>yeslife</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how much time a player has saved from playing.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!yeslife [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>nolife</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how much time a player has wasted playing.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!nolife [player]</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>invite</h2>
+        <p>Description:</p>
+        <div>
+            <p>Invite omgni to your discord server.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!invite</p>
+        </div>
+    </div>
+    <div class="command-div-content">
+        <h2>racist</h2>
+        <p>Description:</p>
+        <div>
+            <p>Shows how racist a player is.</p>
+        </div>
+        <p>Usage:</p>
+        <div>
+            <p>!racist [player]</p>
+        </div>
+    </div>
+</div>

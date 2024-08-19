@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omgni</title>
+
+    <style>
+        body {
+            background-color: rgb(48, 48, 47);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: lighter;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .spawn-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: block flex;
+        }
+
+        .card-div {
+            position: absolute;
+            background-color: rgba(35, 34, 34, 0.9);
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            top: 25%;
+            left: 39%;
+            display: flex;
+            justify-content: center;
+            align-items: center;        
+            padding: 5px;
+        }
+
+        .screen {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .icoo-text {
+            position: absolute;
+            color: rgb(255, 255, 255);
+            top: 5%;
+        }
+
+        .icoo-text2 {
+            position: absolute;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            top: 22%;
+        }
+
+        .ninv-button {
+            position: absolute;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            font-size: 26px;
+            width: 130px;
+            height: 60px;
+            border-radius: 5%;
+            border: 0;
+            color: rgb(255, 255, 255);
+            background-color: rgba(44, 43, 43, 0.99);
+            cursor: pointer;
+            bottom: 10%;
+            left: 38%;
+            transition: background-color 0.4s ease;
+            transition: transform 0.4s ease;
+        }
+
+        .ninv-button:hover {
+            background-color: rgba(69, 219, 102, 0.9);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <img class="spawn-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/ThebesAndSound_2b2t_Layers_of_Spawn_Render_February_2020.png/1280px-ThebesAndSound_2b2t_Layers_of_Spawn_Render_February_2020.png" alt=none>
+    
+        <div class="card-div">
+            <h1 class="icoo-text">Thank your for using omgni!</h1>
+            <h2 class="icoo-text2">Make sure to use -help and follow the setup instructions.</h2>
+            <a href="https://discord.com/oauth2/authorize?client_id=1184890572146745444">
+                <button class="ninv-button">Invite</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
