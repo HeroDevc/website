@@ -7,7 +7,7 @@
 
     <style>
         body {
-            background-color: rgb(48, 48, 47);
+            background-color: rgb(23, 23, 23);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             overflow-x: hidden;
         }
@@ -136,6 +136,42 @@
             justify-content: center;
             justify-items: center;
             flex-direction: column;
+            position: relative;
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        
+        .about-text-area::after, .about-text-area::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: conic-gradient(from var(--angle), rgb(255, 69, 69), rgb(0, 255, 153), rgb(0, 106, 255), rgb(255, 0, 149), rgb(255, 69, 69));
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 2px;
+            border-radius: 15px;
+            animation: 3s spin linear infinite;
+        }
+        
+        .about-text-area::before {
+            filter: blur(1.5rem);
+            opacity: 0.6;
+        }
+        
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg
+            }
         }
         
         .about-text-area h1 {
@@ -224,8 +260,28 @@
             height: auto;
             width: auto;
             max-width: 800px;
-            /*margin-left: 300px;*/
+            position: relative;
             flex-direction: column;
+        }
+
+        .about-tech-area::after, .about-tech-area::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: conic-gradient(from var(--angle), rgb(255, 69, 69), rgb(0, 255, 153), rgb(0, 106, 255), rgb(255, 0, 149), rgb(255, 69, 69));
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 2px;
+            border-radius: 15px;
+            animation: 3s spin linear infinite;
+        }
+        
+        .about-tech-area::before {
+            filter: blur(1.5rem);
+            opacity: 0.6;
         }
         
         .about-tech-area h1 {
