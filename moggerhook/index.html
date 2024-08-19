@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoggerHook</title>
+
+    <style>
+        body {
+            background-color: rgb(111, 111, 111);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgb(111, 111, 111);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(136, 136, 136);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(85, 85, 85);
+        }
+
+        .logo-text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            margin-top: 100px;
+        }
+
+        .logo-text img {
+            display: block;
+            width: 256px;
+            height: 256px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .logo-text h1 {
+            text-align: center;
+            font-size: 64px;
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            font-weight: lighter;
+            text-shadow: 2px 2px rgb(0, 0, 0);
+        }
+
+        .features-div-h1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .features-div-h1 h1 {
+            display: flex;
+            text-align: center;
+            font-size: 48px;
+            font-weight: lighter;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(0, 0, 0);
+        }
+
+        .features-div {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            gap: 12px;
+        }
+
+        .feature-box {
+            position: relative;
+            display: flex;
+            background-color: rgb(41, 41, 41);
+            max-width: 400px;
+            width: auto;
+            height: auto;
+            transition: all 0.3s;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+
+        .feature-box h1 {
+            color: rgb(255, 255, 255);
+            display: flex;
+            font-size: 28px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .feature-box p {
+            color: rgb(255, 255, 255);
+            display: flex;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        .feature-box:hover {
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+        }
+
+        .invite-button-div {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            padding: 0;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        .invite-button-div a {
+            text-decoration: none;
+        }
+
+        .invite-button-div button {
+            display: flex;
+            font-size: 38px;
+            text-align: center;
+            background-color: rgb(81, 81, 81);
+            border: 0;
+            border-radius: 3px;
+            padding: 0;
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-shadow: 1px 1px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        .invite-button-div button:hover {
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+        }
+
+        .more-features {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0);
+            margin-top: 500px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+        }
+
+        .more-features-feature-div {
+            position: relative;
+            display: flex;
+            background-color: rgba(200, 200, 200, 0);
+            width: auto;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            padding-top: 20px;
+            padding-bottom: 70px;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        .more-features-feature-div h1 {
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px rgb(0, 0, 0);
+            display: flex;
+            padding: 0;
+            margin: 0;
+            font-size: 48px;
+        }
+
+        .more-features-feature-div h2 {
+            color: rgb(255, 255, 255);
+            text-shadow: 0.1px 1px rgb(0, 0, 0);
+            display: flex;
+            padding: 0;
+            margin: 0;
+            font-size: 28px;
+            max-width: 600px;
+            width: auto;
+            font-weight: lighter;
+        }
+
+        .more-feature-div-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            width: auto;
+            height: auto;
+            padding: 10px;
+            margin: 0;
+            border-radius: 5px;
+        }
+
+        .moggerhook-ping-dm-div {
+            position: relative;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(81, 81, 81, 1);
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            border-color: rgb(0, 0, 0);
+            border: 2px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            margin-left: 1400px;
+            margin-top: -120px;
+        }
+
+        .moggerhook-ping-img {
+            position: relative;
+            display: block;
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+        }
+
+        .moggerhook-ping-red-dot {
+            position: absolute;
+            display: flex;
+            background-color: rgb(242, 63, 66);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border-color: rgba(0, 0, 0, 1);
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            margin-top: 84px;
+            margin-left: 80px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .moggerhook-ping-red-dot p {
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+        }
+
+        .text-channel-div {
+            position: relative;
+            display: flex;
+            width: 128px;
+            height: 128px;
+            background-color: rgba(81, 81, 81, 1);
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            margin-left: 1400px;
+            margin-top: -120px;
+            border-radius: 50%;
+        }
+
+        .text-channel-div p {
+            color: rgb(255, 255, 255);
+            font-size: 112px;
+        }
+
+        .mm-bottom-text {
+            display: flex;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(0, 0, 0);
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .moggerhook-stats-div {
+            position: relative;
+            display: flex;
+            background-color: rgb(111, 111, 111);
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            margin-top: 120px;
+            margin-bottom: 200px;
+        }
+
+        .moggerhook-stats-div-message {
+            display: flex;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(0, 0, 0);
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            font-weight: lighter;
+        }
+
+        .moggerhook-stats-box {
+            display: flex;
+            background-color: rgb(41, 41, 41);;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            padding: 10px;
+            margin: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .moggerhook-stats-div-holder {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        .moggerhook-stats-box h1 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            align-self: center;
+        }
+
+        .moggerhook-stats-box h2 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>   
+    <div class="logo-text">
+        <img src="../moai.png" alt=none>
+        <h1>MoggerHook</h1>
+    </div>
+    <div class="invite-button-div">
+        <a href="https://discord.com/oauth2/authorize?client_id=1274741357134610465">
+            <button>+ INVITE</button>   
+        </a>
+    </div>
+    <div class="features-div-h1">
+        <h1>Features</h1>
+    </div>
+    <div class="features-div">
+        <div class="feature-box">
+            <h1>Customizable</h1>
+            <p>You can customize most of MoggerHook's commands to your liking!</p>
+        </div>
+        <div class="feature-box">
+            <h1>Easy to use</h1>
+            <p>MoggerHook uses slash commands so you don't have to use any prefix!</p>
+        </div>
+        <div class="feature-box">
+            <h1>Free to use</h1>
+            <p>You don't have to pay for anything when using MoggerHook!</p>
+        </div>
+    </div>
+    <div class="more-features">
+        <div class="more-features-feature-div">
+            <div class="more-feature-div-box">
+                <h1>Join Pings</h1>
+                <h2>Bot pings new users in all of the ping channel you've set! You can have unlimited ping channels.</h2>
+                <div class="moggerhook-ping-dm-div">
+                    <img class="moggerhook-ping-img" src="../moai.png" alt=none>
+                    <div class="moggerhook-ping-red-dot">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-features-feature-div">
+            <div class="more-feature-div-box">
+                <h1>DM Pings</h1>
+                <h2>Bot sends DM message to new users! DM messages are customizable and easy to use.</h2>
+                <div class="moggerhook-ping-dm-div">
+                    <img class="moggerhook-ping-img" src="../moai.png" alt=none>
+                    <div class="moggerhook-ping-red-dot">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-features-feature-div">
+            <div class="more-feature-div-box">
+                <h1>Welcome channel</h1>
+                <h2 style="max-width: 800px;">Bot sends welcome message in welcome channel when a new user joins! Welcome messages are customizable and easy to use.</h2>
+                <div class="text-channel-div">
+                    <p>#</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="mm-bottom-text">And much more!</h1>
+    </div>
+    <div class="moggerhook-stats-div">
+        <div class="moggerhook-stats-div-holder">
+            <div class=moggerhook-stats-box>
+                <h1>150+ Users</h1>
+            </div>
+            <div class=moggerhook-stats-box>
+                <h1>2 Servers</h1>
+            </div>
+        </div>
+        <h1 class="moggerhook-stats-div-message">Use this bot, why don't you?</h1>
+        <div class="invite-button-div">
+            <a href="https://discord.com/oauth2/authorize?client_id=1274741357134610465">
+                <button>+ INVITE</button>   
+            </a>
+        </div>
+    </div>
+</body>
+</html>
