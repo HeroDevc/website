@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeTernos</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+    
+        body {
+            background-color: rgb(18, 18, 18);
+            font-family: "Dosis", sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+    
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+    
+        ::-webkit-scrollbar-track {
+            background: rgb(18, 18, 18);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(90, 90, 90);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(85, 85, 85);
+        }
+    
+        .main-navbar-div {
+            background-color: rgb(37, 37, 37);
+            position: fixed;
+            display: flex;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            justify-items: center;
+            flex-direction: row;
+            border-bottom: 1px solid rgb(104, 104, 104);
+            box-shadow: 1px 0 10px rgb(255, 255, 255);
+            top: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+    
+        .main-navbar-div h1 {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            display: flex;
+            font-size: 48px;
+            font-weight: 400;
+            padding-left: 2%;
+        }
+    
+        .page-main-div {
+            position: relative;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    
+        .freeternos-span-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 86px;
+            padding: 0;
+            margin: 0;
+            margin-top: 28%;
+            text-align: center;
+        }
+    
+        .freeternos-span-text-2 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 42px;
+            padding: 0;
+            margin: 0;
+            margin-top: -1.5%;
+            text-align: center;
+        }
+    
+        .get-started-button {
+            background: none;
+            background-color: rgb(18, 18, 18);
+            display: flex;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 42px;
+            border: solid;
+            border-radius: 7px;
+            border-width: 1px;
+            border-color: rgba(90, 90, 90, 0.9);
+            margin: 0;
+            margin-top: 50px;
+            padding: 8px;
+            box-shadow: 0 0 5px rgb(90, 90, 90);
+            transition: all 0.3s;
+        }
+    
+        .get-started-button:hover {
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+            transform: scale(1.005);
+            cursor: pointer;
+        }
+    
+        .a-no-decoration {
+            text-decoration: none;
+        }
+    
+        .features-div-ft-text {
+            position: relative;
+            display: flex;
+            width: 50%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        .features-div-content {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 18%;
+            gap: 12px;
+        }
+    
+        .feature-div-box {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 15px;
+            border: solid;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: rgba(90, 90, 90, 0.9);
+            box-shadow: 0 0 2px rgb(90, 90, 90);
+            width: 400px;
+            height: 140px;
+            transition: all 0.3s;
+        }
+    
+        .feature-div-box:hover {
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+            transform: scale(1.005);
+        }
+    
+        .feature-div-box img {
+            display: block;
+            /*width: 32px;
+            height: 32px;*/
+            filter: invert(100%);
+            padding: 0;
+            margin: 0;
+        }
+    
+        .feature-div-box h1 {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            font-size: 34px;
+            font-weight: 530;
+            text-align: center;
+        }
+    
+        .feature-div-box p {
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+            font-weight: 500;
+            text-align: center;
+        }
+    
+        .more-features-span-text {
+            color: rgb(255, 255, 255);
+            display: flex;
+            text-align: center;
+            margin: 0;
+            margin-top: 40%;
+            margin-bottom: 1%;
+            padding: 0;
+            font-size: 56px;
+            font-weight: 450;
+        }
+    
+        .more-features-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+            gap: 70px;
+            margin: 0;
+            margin-bottom: 100px;
+            padding: 0;
+            width: 150%;
+        }
+    
+        .more-features-div-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            padding: 5px;
+            margin: 0;
+            flex-direction: column;
+            width: 100%;
+        }
+    
+        .more-features-div-div h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 54px;
+            font-weight: 520;
+            padding: 0;
+            margin: 0;
+            margin-right: 10px;
+            float: left;
+        }
+    
+        .more-features-div-div p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 42px;
+            font-weight: 520;
+            padding: 0;
+            margin: 0;
+            margin-left: 8px;
+        }
+    
+        .ending-text-q {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 68px;
+            font-weight: 500;
+            margin: 0;
+            margin-top: 40%;
+            padding: 0;
+        }
+    
+        .ending-text-q-2 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 40%;
+        }
+    
+        .footer-div {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background-color: rgb(26, 26, 26);
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    
+        .footer-div p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 0;
+            padding: 5px;
+        }
+    
+        .tos-freeternos-span-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 86px;
+            padding: 0;
+            margin: 0;
+            margin-top: 15%;
+            text-align: center;
+        }
+    
+        .tos-freeternos-span-text-2 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 42px;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 10%;
+            margin-top: -1.5%;
+            text-align: center;
+        }
+    
+        .tos-page-large-text {
+            color: rgb(255, 255, 255);
+            margin: 0;
+            margin-top: 7%;
+            padding: 0;
+            font-size: 64px;
+        }
+    
+        .tos-page-p-text {
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-navbar-div">
+        <a class="a-no-decoration" href="./index.html">
+            <h1>FreeTernos</h1>
+        </a>
+    </div>
+    <div class="page-main-div">
+        <div class="features-div-ft-text">
+            <span class="freeternos-span-text">FreeTernos</span>
+            <span class="freeternos-span-text-2">Free 24/7 aternos bot service!</span>
+            <a class="a-no-decoration" href="https://discord.gg/Htr6UCNWUQ">
+                <button class="get-started-button">Get started</button>
+            </a>
+            <div class="features-div-content">
+                <div class="feature-div-box">
+                    <img style="width:32px;height:32px" src="../rocket-256.png" alt=none>
+                    <h1>Easy to use</h1>
+                    <p>Have FreeTernos bot in your server in not time with ease!</p>
+                </div>
+                <div class="feature-div-box">
+                    <img style="width:32px;height:32px" src="../cursor-256.png" alt=none>
+                    <h1>Simple to use</h1>
+                    <p>Set up FreeTernos with just a few clicks without any additional steps!</p>
+                </div>
+                <div class="feature-div-box">
+                    <img style="width:36px;height:32px" src="../wallet-256.png" alt=none>
+                    <h1>Free</h1>
+                    <p>The best part about FreeTernos that it's free and you don't have to pay for anything!</p>
+                </div>
+            </div>
+            <span class="more-features-span-text">Features</span>
+            <div class="more-features-div">
+                <div class="more-features-div-div">
+                    <h1>24/7</h1>
+                    <p>Keep your aternos server up and running 24/7!</p>
+                </div>
+                <div class="more-features-div-div">
+                    <h1>Auto Reconnect</h1>
+                    <p>With Auto Reconnect you don't have to worry about the bot getting disconnected!</p>
+                </div>
+                <div class="more-features-div-div">
+                    <h1>Ability to see the player list!</h1>
+                    <p>With the ability to see the player list you can view who plays your server!</p>
+                </div>
+                <div class="more-features-div-div">
+                    <h1>Easy control using buttons!</h1>
+                    <p>You don't need to download anything or run any scripts, just go to FreeTernos discord and enter your server!</p>
+                </div>
+                <div class="more-features-div-div">
+                    <h1>Auto register and login system!</h1>
+                    <p>You don't need to worry about creating passwords and managing them because FreeTernos does that for you automatically!</p>
+                </div>
+            </div>
+            <span class="ending-text-q">What are you waiting for?</span>
+            <span class="ending-text-q-2">Join FreeTernos discord today and keep your aternos server 24/7 for free!</span>
+        </div>
+    </div>
+    <div class="footer-div">
+        <p>FreeTernos 2024-2024</p>
+        <a class="a-no-decoration" href="./tos/index.html">
+            <p>Terms of service</p>
+        </a>
+    </div>
+</body>
+</html>
