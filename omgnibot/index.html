@@ -6,144 +6,958 @@
     <title>omgni</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&display=swap');
+
+        @keyframes fade-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+
+        @keyframes fade-up {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgb(45, 45, 45);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(45, 45, 45);
+        }
+
         body {
-            background-color: rgb(48, 48, 47);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-weight: lighter;
-            margin: 0;
+            background-color: rgb(25, 25, 25);
             padding: 0;
-            overflow: hidden;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fade-up 0.5s;
         }
 
-        .spawn-img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            display: block flex;
+        @keyframes online-color {
+            0% {
+                box-shadow: 0 0 5px 3px rgba(87, 242, 135, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 5px 3px rgba(87, 242, 135, 0.9);
+            }
+
+            100% {
+                box-shadow: 0 0 5px 3px rgba(87, 242, 135, 0.5);
+            }
         }
 
-        .card-div {
-            position: fixed;
-            background-color: rgba(35, 34, 34, 0.9);
-            width: 500px;
-            height: 300px;
-            border-radius: 10px;
-            top: 25%;
-            left: 39%;
-            display: flex;
-            justify-content: center;
-            align-items: center;        
-            padding: 5px;
-        }
-
-        .screen {
-            width: 100%;
-            height: 100%;
+        header {
+            background-color: rgba(25, 25, 25, 0.7);
             position: fixed;
             display: flex;
-            justify-content: center;
-            align-items: center
+            width: 100%;
+            flex-direction: row;
+            backdrop-filter: blur(2px);
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 0 10px rgb(90, 90, 90);
         }
 
-        .omgni-player-face {
-            position: absolute;
+        .main {
+            position: relative;
             display: flex;
-            border-radius: 10%;
-            width: 100px;
-            height: 100px;
-            top: 5%;
+            flex-direction: column;
         }
 
-        .coo-text {
+        .logo-text {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 10%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            cursor: default;
+        }
+
+        .logo-text a {
+            display: flex;
+            cursor: default;
+        }
+
+        header img {
+            display: flex;
+            width: 56px;
+            height: 56px;
+            border-radius: 5px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header h1 {
+            display: flex;
             color: rgb(255, 255, 255);
-            display: flex;
-        }
-
-        .coo-text2 {
-            position: absolute;
-            display: flex;
-            color: rgb(255, 255, 255);
-            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1.5px;
             text-align: center;
-            top: 50%;
+            margin-left: 10px;
         }
 
-        .dsc-img {
-            position: absolute;
+        .header-buttons-div {
             display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin: 0;
+            margin-left: 40%;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+
+        header a {
+            text-decoration: none;
+            display: flex;
+        }
+
+        .header-buttons-div button {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: 0;
+            font-size: 24px;
+        }
+
+        .header-buttons-div button:hover {
+            cursor: pointer;
+        }
+
+        .intro-text {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            margin-top: 22%;
+            margin-bottom: 25%;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .intro-text h1 {
+            font-family: "Orbitron", sans-serif;
+            display: flex;
+            text-align: center;
+            color: white;
+            text-shadow: 5px 5px rgb(0, 0, 0);
+            width: auto;
+            cursor: default;
+            font-size: 48px;
+        }
+
+        .intro-text h1:hover {
+            text-shadow: 5px 0 2px rgb(0, 0, 0), 0 0 0px rgb(255, 255, 255), 0 0 0px rgb(255, 255, 255), 0 0 0px rgb(255, 255, 255), 0 0 0px rgb(255, 255, 255);
+            cursor: default;
+        }
+
+        .intro-text img {
+            padding: 0;
+            margin: 0;
+            filter: invert(100%);
             width: 64px;
             height: 64px;
-            bottom: 3%;
-            transition: transform 0.4s ease;
+            margin-top: 30px;
         }
 
-        .dsc-img:hover {
-            transform: scale(1.05)
+        .info-text-div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            margin-top: 10%;
+            margin-bottom: 30%;
         }
 
-        .cmd-button {
-            position: absolute;
-            font-family: 'Raleway', sans-serif;
-            text-align: center;
-            font-size: 21px;
-            width: 120px;
-            height: 50px;
-            border-radius: 5%;
-            border: 0;
+        .info-text-div h1 {
+            display: flex;
             color: rgb(255, 255, 255);
-            background-color: rgba(44, 43, 43, 0.99);
-            cursor: pointer;
-            bottom: 6%;
-            left: 10%;
-            transition: background-color 0.4s ease;
-            transition: transform 0.4s ease;
-        }
-
-        .cmd-button:hover {
-            background-color: rgba(69, 219, 102, 0.9);
-            transform: scale(1.05);
-        }
-
-        .inv-button {
-            position: absolute;
-            font-family: 'Raleway', sans-serif;
+            font-size: 42px;
+            padding: 0;
+            margin: 0;
             text-align: center;
-            font-size: 21px;
-            width: 120px;
-            height: 50px;
-            border-radius: 5%;
-            border: 0;
-            color: rgb(255, 255, 255);
-            background-color: rgba(44, 43, 43, 0.99);
-            cursor: pointer;
-            bottom: 6%;
-            right: 10%;
-            transition: background-color 0.4s ease;
-            transition: transform 0.4s ease;
         }
 
-        .inv-button:hover {
-            background-color: rgba(69, 219, 102, 0.9);
-            transform: scale(1.05);
+        .info-text-div p {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            width: 60%;
+        }
+
+        .features-div {
+            position: relative;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .features-div-h1 {
+            display: flex;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 48px;
+        }
+
+        .feature-div {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            flex-direction: row;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .feature-div-about-text {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        .feature-user-interaction-bot-div {
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feature-div-about-text h1 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+            margin: 0;
+            padding: 5px;
+            white-space: nowrap;
+        }
+
+        .feature-div-about-text p {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            margin: 0;
+            padding: 5px;
+            white-space: nowrap;
+        }
+
+        .user-interaction-bot-reply-chat-div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: 0;
+            padding: 10px;
+            background-color: rgb(49, 51, 56);
+            border-radius: 10px;
+        }
+
+        .user-command-embed-div {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .user-command-embed-usertext-div {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        .user-command-embed-div-img {
+            display: flex;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-command-embed-usertext-div h2 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+
+        .user-command-embed-usertext-div p {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: lighter;
+            padding: 0;
+            margin: 2px;
+            margin-left: 10px;
+        }
+
+        .omgni-reply-embed-div {
+            position: relative;
+            display: flex;
+            background-color: rgb(43, 45, 49);
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .omgni-reply-embed-text-p p {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: lighter;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .omgni-reply-embed-side-color-div {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(87, 242, 135);
+            width: 4px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .discord-embed-design-1-div {
+            position: relative;
+            display: flex;
+            background-color: rgb(43, 45, 49);
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .discord-embed-design-1-sidecolor {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(87, 242, 135);
+            width: 4px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .discord-embed-design-1-bot-img {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            padding: 5px;
+            margin: 0;
+            align-self: center;
+        }
+
+        .discord-embed-design-1-bot-name {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0px;
+        }
+
+        .discord-embed-design-1-bot-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0;
+        }
+
+        .discord-embed-design-1-bot-name-img-div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .discord-embed-design-1-elements-div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .discord-embed-design-2-div {
+            position: relative;
+            display: flex;
+            background-color: rgb(43, 45, 49);
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .discord-embed-design-2-sidecolor {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(87, 242, 135);
+            width: 4px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .discord-embed-design-2-elements-div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .discord-embed-design-2-bot-name-img-div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .discord-embed-design-2-bot-name {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0px;
+        }
+
+        .discord-embed-design-2-bot-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .discord-embed-design-2-bot-img {
+            display: flex;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 0;
+            margin-left: 20px;
+            align-self: center;
+        }
+
+        .discord-embed-design-3-div {
+            position: relative;
+            display: flex;
+            background-color: rgb(43, 45, 49);
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .discord-embed-design-3-sidecolor {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(87, 242, 135);
+            width: 4px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .discord-embed-design-3-bot-img {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            padding: 5px;
+            margin: 0;
+            align-self: center;
+        }
+
+        .discord-embed-design-3-bot-name {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0px;
+        }
+
+        .discord-embed-design-3-bot-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 500;
+            align-self: center;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0;
+        }
+
+        .discord-embed-design-3-bot-name-img-div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .discord-embed-design-3-elements-div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ext-custom-row-div {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .bad-at-css-text {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: lighter;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .more-features-div {
+            position: relative;
+            display: flex;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .more-features-feature-div {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(18, 18, 18);
+            padding: 5px;
+            margin: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+            cursor: default;
+            transition: all 0.3s;
+        }
+
+        .more-features-feature-div:hover {
+            box-shadow: 0 0 12px rgb(107, 107, 107);
+            transform: scale(1.005);
+        }
+
+        .more-features-feature-div img {
+            display: flex;
+            width: 128px;
+            height: 128px;
+            filter: invert(100%);
+        }
+
+        .more-features-feature-div h1 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .more-features-feature-div p {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .bot-stats-div {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+            margin-top: 8%;
+            margin-bottom: 4%;
+            width: 100%;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .bot-stats-stat-div {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            margin: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: rgb(18, 18, 18);
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+            cursor: default;
+            transition: all 0.3s;
+        }
+
+        .bot-stats-stat-div:hover {
+            box-shadow: 0 0 12px rgb(107, 107, 107);
+            transform: scale(1.005);
+        }
+
+        .bot-stats-stat-div img {
+            display: flex;
+            width: 128px;
+            height: 128px;
+            filter: invert(100%);
+        }
+
+        .bot-stats-stat-div h1 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .use-bot-div {
+            position: relative;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-items: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .use-bot-text-div {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .use-bot-text-div .use-bot-online-div img {
+            position: relative;
+            display: flex;
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .green-online-circle {
+            position: relative;
+            display: flex;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            margin: 0;
+            margin-top: -50px;
+            margin-left: 85px;
+            border-radius: 50%;
+            border: 5px solid rgba(25, 25, 25, 1);
+            background-color: rgb(87, 242, 135);
+            animation: online-color 2.5s infinite;
+        }
+
+        .use-bot-text-div h1 {
+            display: flex;
+            color: rgb(255, 255, 255);
+            font-weight: 480;
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+        }
+
+        .invite-button-use-div {
+            position: relative;
+            display: flex;
+            margin: 0;
+            margin-top: 2%;
+            margin-bottom: 10%;
+            padding: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .invite-button-use-div a {
+            text-decoration: none;
+            display: flex;
+        }
+
+        .invite-button-use-div button {
+            display: flex;
+            padding: 7px;
+            margin: 0;
+            border: 0;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            letter-spacing: 1.5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(90, 90, 90);
+            transition: all 0.3s;
+        }
+
+        .invite-button-use-div button:hover {
+            cursor: pointer;
+            box-shadow: 0 0 12px rgb(107, 107, 107);
+            transform: scale(1.015);
         }
     </style>
 </head>
 <body>
-    <div class="screen">
-        <img class="spawn-img" src="../spawn2b2t.png" alt=none>
-    
-        <div class="card-div">
-            <img class="omgni-player-face" src="../omgni.png" alt=none>
-            <h2 class="coo-text">Check out omgni!</h2>
-            <p class="coo-text2">omgni bot is an anarchy chat bot. It adds chat bridge and commands into the game and discord.</p>
-            <a class="dsc-img" href="https://discord.gg/NhjHZHCtzM">
-                <img class="dsc-img" src="../discord.png" alt=none>
+    <header>
+        <div class="logo-text">
+            <a href="">
+                <img src="../omgni.png">
+                <h1>OMGNI</h1>
             </a>
+        </div>
+        <div class="header-buttons-div">
             <a href="./commands/index.html">
-                <button class="cmd-button">Commands</button>
+                <button>COMMANDS</button>
             </a>
-            <a href="./invite/index.html">
-                <button class="inv-button">Invite</button>
+            <a href="https://discord.com/oauth2/authorize?client_id=1184890572146745444">
+                <button>INVITE</button>
+            </a>
+            <a href="https://discord.gg/NhjHZHCtzM">
+                <button>DISCORD</button>
+            </a>
+        </div>
+    </header>
+    <div class="main">
+        <div class="intro-text">
+            <h1>Explore new ways to use anarchy chat bots</h1>
+            <a href="#1">
+                <img src="../arrow-down.png">
+            </a>
+        </div>
+        <div id="1" class="info-text-div">
+            <h1>About</h1>
+            <p>Omgni bot is a minecraft anarchy chat bot made in 2022. Omgni bot has more than 80 commands which can be used in discord or ingame.</p>
+        </div>
+        <div class="features-div">
+            <h1 class="features-div-h1">Features</h1>
+            <div class="feature-div">
+                <div class="feature-div-about-text">
+                    <h1>Discord Commands</h1>
+                    <p>Many ingame commands can be used in discord!</p>
+                </div>
+                <div class="feature-user-interaction-bot-div">
+                    <div class="user-interaction-bot-reply-chat-div">
+                        <div class="user-command-embed-div">
+                            <img class="user-command-embed-div-img" src="../discordblue.png" alt=none>
+                            <div class="user-command-embed-usertext-div">
+                                <h2>User</h2>
+                                <p>!ping omgni</p>
+                            </div>
+                        </div>
+                        <div class="user-command-embed-div">
+                            <img class="user-command-embed-div-img" src="../omgni.png" alt=none>
+                            <div class="user-command-embed-usertext-div">
+                                <h2>omgni</h2>
+                                <div class="omgni-reply-embed-div">
+                                    <div class="omgni-reply-embed-side-color-div"></div>
+                                    <div class="omgni-reply-embed-text-p">
+                                        <p>omgni's ping is 27ms</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-div">
+                <div class="feature-div-about-text">
+                    <h1>Extensive customizability</h1>
+                    <p>Omgni bot's chat bridge design and settings are very customizable!</p>
+                </div>
+            </div>
+            <div class="ext-custom-row-div">
+                <div class="feature-user-interaction-bot-div">
+                    <div class="user-interaction-bot-reply-chat-div">
+                        <div class="user-command-embed-div">
+                            <img class="user-command-embed-div-img" src="../omgni.png" alt=none>
+                            <div class="user-command-embed-usertext-div">
+                                <h2>omgni</h2>
+                                <div class="discord-embed-design-1-div">
+                                    <div class="discord-embed-design-1-sidecolor"></div>
+                                    <div class="discord-embed-design-1-elements-div">
+                                        <div class="discord-embed-design-1-bot-name-img-div">
+                                            <img class="discord-embed-design-1-bot-img" src="../omgni.png" alt=none>
+                                            <h3 class="discord-embed-design-1-bot-name">omgni</h3>
+                                        </div>
+                                        <p class="discord-embed-design-1-bot-text">> Hello World!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-user-interaction-bot-div">
+                    <div class="user-interaction-bot-reply-chat-div">
+                        <div class="user-command-embed-div">
+                            <img class="user-command-embed-div-img" src="../omgni.png" alt=none>
+                            <div class="user-command-embed-usertext-div">
+                                <h2>omgni</h2>
+                                <div class="discord-embed-design-2-div">
+                                    <div class="discord-embed-design-2-sidecolor"></div>
+                                    <div class="discord-embed-design-2-elements-div">
+                                        <div class="discord-embed-design-2-bot-name-img-div">
+                                            <h3 class="discord-embed-design-2-bot-name">omgni</h3>
+                                            <img class="discord-embed-design-2-bot-img" src="../omgni.png" alt=none>
+                                        </div>
+                                        <p class="discord-embed-design-2-bot-text">> Hello World!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-user-interaction-bot-div">
+                    <div class="user-interaction-bot-reply-chat-div">
+                        <div class="user-command-embed-div">
+                            <img class="user-command-embed-div-img" src="../omgni.png" alt=none>
+                            <div class="user-command-embed-usertext-div">
+                                <h2>omgni</h2>
+                                <div class="discord-embed-design-3-div">
+                                    <div class="discord-embed-design-3-sidecolor"></div>
+                                    <div class="discord-embed-design-3-elements-div">
+                                        <p class="discord-embed-design-3-bot-text">> Hello World!</p>
+                                        <div class="discord-embed-design-3-bot-name-img-div">
+                                            <img class="discord-embed-design-3-bot-img" src="../omgni.png" alt=none>
+                                            <h3 class="discord-embed-design-3-bot-name">omgni</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="bad-at-css-text">Disclaimer! These designs look similar to discord embed designs, but they do not reflect the discord embeds, this is just my try to recreate the design! (I'm bad at css)</p>
+        <div class="more-features-div">
+            <div class="more-features-feature-div">
+                <img src="../database-storage.png" alt=none>
+                <h1>Data Tracking</h1>
+                <p>Omgni tracks many things like playtime, kills, messages, etc.</p>
+            </div>
+            <div class="more-features-feature-div">
+                <img src="../uptime.png" alt=none>
+                <h1>High Uptime</h1>
+                <p>Omgni has high uptime with infrequent disconnects.</p>
+            </div>
+            <div class="more-features-feature-div">
+                <img src="../distribution-network.png" alt=none>
+                <h1>Distrubution</h1>
+                <p>Omgni is distributed amongst 10+ minecraft servers!</p>
+            </div>
+            <div class="more-features-feature-div">
+                <img src="../updates.png" alt=none>
+                <h1>Bug Fixes</h1>
+                <p>We aim to fix and patch bugs for a bug free experience.</p>
+            </div>
+        </div>
+        <div class="bot-stats-div">
+            <div class="bot-stats-stat-div">
+                <img src="../discord-server.png" alt=none>
+                <h1>50+ Discord servers use this bot!</h1>
+            </div>
+            <div class="bot-stats-stat-div">
+                <img src="../minecraft-creeper.png" alt=none>
+                <h1>Omgni supports more than 10 Minecraft servers!</h1>
+            </div>
+        </div>
+        <div class="use-bot-div">
+            <div class="use-bot-text-div">
+                <div class="use-bot-online-div">
+                    <img src="../omgni.png" alt=none>
+                    <div class="green-online-circle"></div>
+                </div>
+                <h1>More than 50 discord servers use me, give me a try!</h1>
+            </div>
+        </div>
+        <div class="invite-button-use-div">
+            <a href="https://discord.com/oauth2/authorize?client_id=1184890572146745444">
+                <button>INVITE ME</button>
             </a>
         </div>
     </div>
