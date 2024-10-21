@@ -46,6 +46,34 @@
             }
         }
 
+        @media only screen and (max-width: 1500px) {
+            .ext-custom-row-div {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media only screen and (min-width: 1500px) {
+            .ext-custom-row-div {
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media only screen and (max-width: 490px) {
+            .more-features-feature-div {
+                height: fit-content;
+                width: fit-content;
+            }
+        }
+
+        @media only screen and (min-width: 490px) {
+            .more-features-feature-div {
+                height: 300px;
+                width: 300px;
+            }
+        }
+
         header {
             background-color: rgba(25, 25, 25, 0.7);
             position: fixed;
