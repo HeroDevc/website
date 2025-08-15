@@ -213,7 +213,7 @@ nav ul li:hover {
 
 br {
     padding: 0;
-    margin: 28px 0;
+    margin: 56px 0;
 }
 
 .connections-div {
@@ -328,4 +328,5 @@ br {
     margin: 0;
     width: 48px;
     height: 48px;
+
 }
