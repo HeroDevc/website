@@ -1,0 +1,331 @@
+body {
+    background: url("https://instanthost.gg/images/products/factorio/factorio-product-header.png.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    padding: 26px;
+}
+
+main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(26, 26, 30, 0.85);
+    border: solid 1px rgb(51, 51, 56);
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    align-items: center;
+}
+
+.content-header-h1 {
+    padding: 6px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    padding: 0;
+    margin: 0 0 40px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    list-style: none;
+    gap: 24px;
+}
+
+nav ul li {
+    padding: 4px 14px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+nav ul li a p {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+nav ul li:hover {
+    background-color: rgba(62, 62, 66, 0.7);
+}
+
+.about-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+    background-color: rgb(26, 26, 30);
+    border: solid 1px rgb(51, 51, 56);
+    border-radius: 6px;
+    width: fit-content;
+    min-width: 512px;
+}
+
+.user-img-div {
+    position: relative;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 96px;
+    height: 96px;
+}
+
+.user-img-div img {
+    padding: 0;
+    margin: 0;
+    border: solid 6px rgb(26, 26, 30);
+    border-radius: 50%;
+}
+
+.online-dot-div {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(67, 162, 90);
+    color: rgba(0, 0, 0, 0);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: solid 8px rgb(26, 26, 30);
+    top: 68%;
+    left: 64%;
+    cursor: default;
+}
+
+.profile-row-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.user-name-div {
+    padding: 0;
+    margin: 0;
+}
+
+.user-name-div h1 {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.user-name-div h3 {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+
+.about-text-div {
+    padding: 6px;
+    margin: 0;
+}
+
+.about-text-div p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.badges-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.badge-div {
+    position: relative;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    top: 8%;
+}
+
+.badge-div p {
+    position: absolute;
+    display: none;
+    padding: 4px 6px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 26, 30);
+    border: solid 1px rgb(51, 51, 56);
+    border-radius: 4px;
+    width: max-content;
+    top: -36%;
+}
+
+.badge-div img {
+    padding: 0;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.badge-div:hover p {
+    display: flex !important;
+}
+
+.programming-languages-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.programming-languages-div img {
+    padding: 0;
+    margin: 0;
+    width: 128px;
+    height: 128px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.programming-languages-div img:hover {
+    scale: 1.05;
+}
+
+br {
+    padding: 0;
+    margin: 28px 0;
+}
+
+.connections-div {
+    display: flex;
+    padding: 6px;
+    margin: 0;
+    flex-direction: column;
+}
+
+.connections-div h1 {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.connection-divs-row {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.github-connection-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 4px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.github-connection-div img {
+    padding: 6px;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.github-connection-div h2 {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.projects-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.project-div {
+    padding: 16px;
+    margin: 0;
+    background-color: rgb(26, 26, 30);
+    border: solid 1px rgb(51, 51, 56);
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+.project-div:hover {
+    box-shadow: 0 0 10px 2px rgb(26, 26, 30);
+}
+
+.project-div a {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    align-items: center;
+}
+
+.project-div a h1 {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.project-div a p {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.langs-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+}
+
+.lang-div {
+    padding: 2px;
+    margin: 0;
+}
+
+.lang-div img {
+    padding: 0;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+}
