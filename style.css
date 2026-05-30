@@ -178,7 +178,7 @@ main {
     gap: 32px;
     /* background-color: rgb(26, 26, 30); */
     /* rgb(40, 40, 44) */
-    background: linear-gradient(70deg, rgb(26, 26, 30), rgb(29, 29, 32), rgb(40, 40, 44));
+    background: linear-gradient(0deg, rgb(26, 26, 30), rgb(29, 29, 32), rgb(40, 40, 44));
     align-items: center;
 }
 
@@ -243,6 +243,54 @@ main {
 
     .project-top h3 {
         font-size: 48px !important;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .project-bottom-info {
+        flex-direction: column !important;
+    }
+
+    .project-top {
+        text-align: center;
+    }
+
+    .project-top h3 {
+        font-size: 36px !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .comparison-line-div {
+        width: 140px !important;
+    }
+
+    .comparison-line-div-classicrs {
+        width: 12px !important;
+    }
+
+    .comparison-line-div-vanilla {
+        width: 120px !important;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .project-bottom-info-languages {
+        /* flex-direction: column !important; */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .comparison-line-div {
+        width: 100px !important;
+    }
+
+    .comparison-line-div-classicrs {
+        width: 12px !important;
+    }
+
+    .comparison-line-div-vanilla {
+        width: 86px !important;
     }
 }
 
